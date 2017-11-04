@@ -11,7 +11,7 @@ mongoose.connect(
   }
 );
 
-const bookSeed = [
+const articleSeed = [
   {
     title: "The Dead Zone",
     author: "Stephen King",
@@ -126,7 +126,7 @@ const bookSeed = [
   }
 ];
 
-db.Book
+db.Article
   .remove({})
   .then(() => db.Book.collection.insertMany(bookSeed))
   .then(data => {
