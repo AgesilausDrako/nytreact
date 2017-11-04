@@ -9,11 +9,11 @@ export default {
   getArticles: function(id) {
     return axios.get("/api/articles/" + id);
   },
-  // Deletes the articles with the given id
+  // Deletes the article with the given id
   deleteArticles: function(id) {
     return axios.delete("/api/articles/" + id);
   },
-  // Saves an articles to the database
+  // Saves an article to the database
   saveArticles: function(articleData) {
     return axios.post("/api/articles", articleData);
   }

@@ -5,7 +5,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input, FormBtn } from "../../components/Form";
 
 class Articles extends Component {
   state = {
@@ -59,41 +59,41 @@ class Articles extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>NY Times React Search</h1>
+              <h1>NY Times Article Scrubber</h1>
+              <h2>Search for and annotate articles of interest!</h2>
             </Jumbotron>
-            <form>
+            <form className="col-md-10 col-md-offset-1 text-center">
+              <h1 className="text-center">Search</h1>
+              <h1 className="text-center">Topic</h1>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
+                name="topic"
               />
+              <h1 className="text-center">Start Year</h1>
               <Input
                 value={this.state.author}
                 onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                name="startYear"
               />
-              <TextArea
-                value={this.state.synopsis}
+              <h1 className="text-center">End Year</h1>
+              <Input
+                value={this.state.author}
                 onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="endYear"
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit
               </FormBtn>
             </form>
           </Col>
         </Row>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
+            
             {this.state.articles.length ? (
               <List>
                 {this.state.articles.map(article => (
@@ -108,7 +108,7 @@ class Articles extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 className="text-center">No Results to Display</h3>
             )}
           </Col>
         </Row>
