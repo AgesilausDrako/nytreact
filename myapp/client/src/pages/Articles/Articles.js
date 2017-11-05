@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, FormBtn } from "../../components/Form";
+import Main from "../../components/Main";
 
 class Articles extends Component {
   state = {
     articles: [],
     title: "",
-    author: "",
-    synopsis: ""
+    date: "",
+    url: ""
   };
 
   componentDidMount() {
@@ -22,7 +23,7 @@ class Articles extends Component {
   loadArticles = () => {
     API.getArticles()
       .then(res =>
-        this.setState({ articles: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ articles: res.data, title: "", date: "", url: "" })
       )
       .catch(err => console.log(err));
   };

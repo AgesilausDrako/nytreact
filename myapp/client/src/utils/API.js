@@ -3,18 +3,18 @@ import axios from "axios";
 export default {
   // Gets all articles
   getArticles: function() {
-    return axios.get("/api/articles");
+    return axios.get("/api/saved");
   },
   // Gets the article with the given id
   getArticles: function(id) {
-    return axios.get("/api/articles/" + id);
+    return axios.get("/api/saved/" + id);
   },
   // Deletes the article with the given id
   deleteArticles: function(id) {
-    return axios.delete("/api/articles/" + id);
+    return axios.delete("/api/saved/" + id);
   },
   // Saves an article to the database
   saveArticles: function(articleData) {
-    return axios.post("/api/articles", articleData);
+    return axios.post("/api/saved", articleData);
   }
 };
