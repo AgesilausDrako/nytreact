@@ -63,7 +63,11 @@ class Articles extends Component {
               <h1>NY Times Article Scrubber</h1>
               <h2>Search for and annotate articles of interest!</h2>
             </Jumbotron>
-            <form className="col-md-10 col-md-offset-1 text-center">
+          </Col>
+        </Row>
+        <Row>
+          <Col size="sm-9">
+          <form className="col-sm-offset-4 text-center">
               <h1 className="text-center">Search</h1>
               <h1 className="text-center">Topic</h1>
               <Input
@@ -94,7 +98,6 @@ class Articles extends Component {
         </Row>
         <Row>
           <Col size="md-12">
-            
             {this.state.articles.length ? (
               <List>
                 {this.state.articles.map(article => (
