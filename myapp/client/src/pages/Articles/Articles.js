@@ -5,8 +5,8 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, FormBtn } from "../../components/Form";
 import Main from "../../components/Main";
+import Search from "../../components/Search";
 
 class Articles extends Component {
   state = {
@@ -65,37 +65,7 @@ class Articles extends Component {
             </Jumbotron>
           </Col>
         </Row>
-        <Row>
-          <Col size="sm-9">
-          <form className="col-sm-offset-4 text-center">
-              <h1 className="text-center">Search</h1>
-              <h1 className="text-center">Topic</h1>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="topic"
-              />
-              <h1 className="text-center">Start Year</h1>
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="startYear"
-              />
-              <h1 className="text-center">End Year</h1>
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="endYear"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit
-              </FormBtn>
-            </form>
-          </Col>
-        </Row>
+        <Search />
         <Row>
           <Col size="md-12">
             {this.state.articles.length ? (
